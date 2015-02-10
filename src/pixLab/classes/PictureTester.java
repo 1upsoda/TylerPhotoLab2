@@ -78,7 +78,7 @@ public class PictureTester
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
+    Picture caterpillar = new Picture("redMotorcycle.jpg");
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
@@ -112,11 +112,113 @@ public class PictureTester
     bike.explore();
     bike.mirrorHorizontal();
     bike.explore();
-//    bike.grayscale();
+    bike.grayscale();
     bike.explore();
     bike.mirrorVertical();
     bike.explore();
     bike.keepOnlyRed();
+    bike.explore();
+    bike.checkerBoardWat();
+    bike.explore();
+    bike.mirrorDiagnol();
+    bike.explore();
+    bike.mirrorHorizontal();
+    bike.explore();
+    bike.grayscale();
+    bike.explore();
+    bike.mirrorVertical();
+    bike.explore();
+    bike.mirrorDiagnol();
+    bike.explore();
+    bike.mirrorHorizontal();
+    bike.explore();
+    bike.grayscale();
+    bike.explore();
+    bike.mirrorVertical();
+    bike.explore();
+    
+  }
+  public static void testEndProduct()
+  {
+    Picture bike = new Picture("beach.jpg");
+    bike.mirrorDiagnol();
+    bike.mirrorHorizontal();
+    bike.grayscale();
+    bike.mirrorVertical();
+    bike.keepOnlyRed();
+    bike.checkerBoardWat();
+    bike.mirrorDiagnol();
+    bike.mirrorHorizontal();
+    bike.grayscale();
+    bike.mirrorVertical();
+    bike.mirrorDiagnol();
+    bike.mirrorHorizontal();
+    bike.grayscale();
+    bike.mirrorVertical();
+    bike.explore();
+    bike = new Picture("femaleLionAndHall.jpg");
+    bike.mirrorDiagnol();
+    bike.mirrorHorizontal();
+    bike.grayscale();
+    bike.mirrorVertical();
+    bike.keepOnlyRed();
+    bike.checkerBoardWat();
+    bike.mirrorDiagnol();
+    bike.mirrorHorizontal();
+    bike.grayscale();
+    bike.mirrorVertical();
+    bike.mirrorDiagnol();
+    bike.mirrorHorizontal();
+    bike.grayscale();
+    bike.mirrorVertical();
+    bike.explore();
+    bike = new Picture("blue-mark.jpg");
+    bike.mirrorDiagnol();
+    bike.mirrorHorizontal();
+    bike.grayscale();
+    bike.mirrorVertical();
+    bike.keepOnlyRed();
+    bike.checkerBoardWat();
+    bike.mirrorDiagnol();
+    bike.mirrorHorizontal();
+    bike.grayscale();
+    bike.mirrorVertical();
+    bike.mirrorDiagnol();
+    bike.mirrorHorizontal();
+    bike.grayscale();
+    bike.mirrorVertical();
+    bike.explore();
+    bike = new Picture("butterfly1.jpg");
+    bike.mirrorDiagnol();
+    bike.mirrorHorizontal();
+    bike.grayscale();
+    bike.mirrorVertical();
+    bike.keepOnlyRed();
+    bike.checkerBoardWat();
+    bike.mirrorDiagnol();
+    bike.mirrorHorizontal();
+    bike.grayscale();
+    bike.mirrorVertical();
+    bike.mirrorDiagnol();
+    bike.mirrorHorizontal();
+    bike.grayscale();
+    bike.mirrorVertical();
+    bike.explore();
+    bike = new Picture("arch.jpg");
+    bike.mirrorDiagnol();
+    bike.mirrorHorizontal();
+    bike.grayscale();
+    bike.mirrorVertical();
+    bike.keepOnlyRed();
+    bike.checkerBoardWat();
+    bike.mirrorDiagnol();
+    bike.mirrorHorizontal();
+    bike.grayscale();
+    bike.mirrorVertical();
+    bike.mirrorDiagnol();
+    bike.mirrorHorizontal();
+    bike.grayscale();
+    bike.mirrorVertical();
     bike.explore();
   }
   public static void testMirrorHorizontalBottomToTop()
@@ -171,7 +273,98 @@ public class PictureTester
     canvas.copy(canvas, 60, 60);
     canvas.explore();
   }
-  
+  public static void testCheckerBoard()
+  {
+    Picture canvas = new Picture("beach.jpg");
+    canvas.explore();
+    canvas.checkerBoard();
+    canvas.explore();
+  }
+  public static void testCheckerBoardBig()
+  {
+    Picture canvas = new Picture("beach.jpg");
+    canvas.explore();
+    canvas.checkerBoardBig();
+    canvas.explore();
+  }
+  public static void testCheckerBoardInverse()
+  {
+    Picture canvas = new Picture("beach.jpg");
+    canvas.explore();
+    canvas.checkerBoardInverse();
+    canvas.explore();
+  }
+  public static void testCheckerBoardWat()
+  {
+    Picture canvas = new Picture("beach.jpg");
+    canvas.explore();
+    canvas.checkerBoardWat();
+    canvas.explore();
+  }
+  public static void testCheckerBoardBigWat()
+  {
+    Picture canvas = new Picture("beach.jpg");
+    canvas.explore();
+    canvas.checkerBoardBigWat();
+    canvas.explore();
+  }
+  public static void testMostlyWhite()
+  {
+    Picture canvas = new Picture("beach.jpg");
+    canvas.explore();
+    canvas.mostlyWhite();
+    canvas.explore();
+  }
+  public static void testWeakenedWhite()
+  {
+    Picture canvas = new Picture("beach.jpg");
+    canvas.explore();
+    canvas.weakenedWhite();
+    canvas.explore();
+  }
+  public static void testRGBGrey()
+  {
+    Picture canvas = new Picture("beach.jpg");
+    canvas.explore();
+    canvas.redGrey();
+    canvas.explore();
+    canvas.blueGrey();
+    canvas.explore();
+    canvas.greenGrey();
+    canvas.explore();
+    
+  }
+  public static void testRedGreenBlueAverage()
+  {
+    Picture canvas = new Picture("beach.jpg");
+    canvas.explore();
+    canvas.redGreenBlueAverage();
+    canvas.explore();
+    canvas = new Picture("femaleLionAndHall.jpg");
+    canvas.explore();
+    canvas.redGreenBlueAverage();
+    canvas.explore();
+    canvas = new Picture("blue-mark.jpg");
+    canvas.explore();
+    canvas.redGreenBlueAverage();
+    canvas.explore();
+    canvas = new Picture("KatieFancy.jpg");
+    canvas.explore();
+    canvas.redGreenBlueAverage();
+    canvas.explore();
+    canvas = new Picture("gorge.jpg");
+    canvas.explore();
+    canvas.redGreenBlueAverage();
+    canvas.explore();
+    canvas = new Picture("kitten2.jpg");
+    canvas.explore();
+    canvas.redGreenBlueAverage();
+    canvas.explore();
+    canvas = new Picture("koala.jpg");
+    canvas.explore();
+    canvas.redGreenBlueAverage();
+    canvas.explore();
+  }
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -179,28 +372,37 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    //testZeroBlue();
-    //testKeepOnlyBlue();
-    //testKeepOnlyRed();
-    //testKeepOnlyGreen();
-    //testNegate();
-    //testGrayscale();
-    //testFixUnderwater();
-    //testOneOff();
-    //testOneOff2();
-    //testMirrorVertical();
-    //testMirrorVerticalRightToLeft();
-    //testMirrorHorizontal();
-    //testMirrorHorizontalBottomToTop();
-    testMirrorDiagnol();
-    //testMultiple();
-    //testMirrorTemple();
-    //testMirrorArms();
-    //testMirrorGull();
-    //testMirrorDiagonal();
-    //testCollage();
-    testCopy();
-    //testEdgeDetection();
+//	  testRedGreenBlueAverage();
+//	  testMostlyWhite();
+//	  testRGBGrey();
+//	  testWeakenedWhite();
+//    testZeroBlue();
+//    testKeepOnlyBlue();
+//    testKeepOnlyRed();
+//    testKeepOnlyGreen();
+//    testNegate();
+//    testGrayscale();
+//    testFixUnderwater();
+//    testOneOff();
+//    testOneOff2();
+//    testMirrorVertical();
+//    testMirrorVerticalRightToLeft();
+//    testMirrorHorizontal();
+//    testMirrorHorizontalBottomToTop();
+//    testMirrorDiagnol();
+//    testCheckerBoard();
+//    testCheckerBoardBig();
+    testCheckerBoardInverse();
+//    testCheckerBoardWat();
+//    testCheckerBoardBigWat();
+//    testMultiple();
+//	  testEndProduct();
+//    testMirrorTemple();
+//    testMirrorArms();
+//    testMirrorGull();
+//    testCollage();
+//    testCopy();
+//    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
