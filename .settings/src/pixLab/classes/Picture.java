@@ -330,6 +330,55 @@ public class Picture extends SimplePicture
 			}
 		}
 	}
+	public void checkerRandom()
+	{
+	Pixel[][] pixels = this.getPixels2D();
+	int width = pixels[0].length;
+		for (int row = 0; row < pixels.length; row++)
+		{
+			for (int col = 0; col < width; col++)
+			{
+				if((row%2 == 0 && col%2 == 0) || (row%2 == 1 && col%2 == 1))
+				{
+					int oldRed,oldBlue,oldGreen;
+					oldRed = pixels[row][col].getRed();
+					oldGreen = pixels[row][col].getGreen();
+					oldBlue = pixels[row][col].getBlue();
+					int randomAdd = (int) Math.random() * 40;
+					int addOrSubtract = (int) Math.random();
+					if(addOrSubtract == 0)
+					{
+						pixels[row][col].setBlue(oldBlue + randomAdd);
+					}
+					else
+					{
+						pixels[row][col].setBlue(oldBlue - randomAdd);
+					}
+					randomAdd = (int) Math.random() * 40;
+					addOrSubtract = (int) Math.random();
+					if(addOrSubtract == 0)
+					{
+						pixels[row][col].setBlue(oldGreen + randomAdd);
+					}
+					else
+					{
+						pixels[row][col].setBlue(oldGreen - randomAdd);
+					}
+					randomAdd = (int) Math.random() * 40;
+					addOrSubtract = (int) Math.random();
+					if(addOrSubtract == 0)
+					{
+						pixels[row][col].setBlue(oldRed + randomAdd);
+					}
+					else
+					{
+						pixels[row][col].setBlue(oldRed - randomAdd);
+					}
+					
+				}
+			}
+		}
+	}
 	public void checkerBoard2Pictures()
 	{
 	Pixel[][] pixels = this.getPixels2D();
@@ -773,6 +822,113 @@ public class Picture extends SimplePicture
 		this.copy(flower2, 500, 0);
 		this.mirrorVertical();
 		this.write("collage.jpg");
+	}
+//	public void checker2Pictures()
+//	{
+//		Picture flower1 = new Picture("flower1.jpg");
+//		Picture flower2 = new Picture("flower2.jpg");
+//		this.copy(flower1, 0, 0);
+//		flower1.checkerBoard();
+//		this.copy(flower1, 0, 0);
+//		flower1.checkerBoard();
+//		this.copy(flower2, 100, 0);
+//		this.copy(flower1, 200, 0);
+//		Picture flowerNoBlue = new Picture(flower2);
+//		flowerNoBlue.zeroBlue();
+//		this.copy(flowerNoBlue, 300, 0);
+//		this.copy(flower1, 400, 0);
+//		this.copy(flower2, 500, 0);
+//		this.mirrorVertical();
+//		this.write("collage.jpg");
+//	}
+	public void encode()
+	{
+		Picture beach = new Picture("beach.jpg");
+		Picture message = new Picture("lol2.jpg");
+		beach.evenRed();
+		this.copy(beach, 0, 0);
+		beach.encoding(message, beach);
+//		beach.decode(beach);
+//		this.copy(beach, 0, 0);
+//		
+		
+	}
+	public void decode()
+	{
+		Picture beach = new Picture("beach.jpg");
+		Picture message = new Picture("message.jpg");
+		beach.decode(beach);
+		this.copy(beach, 0, 0);
+	}
+	public void encodeAndDecode()
+	{
+		Picture beach = new Picture("beach.jpg");
+		Picture message = new Picture("message.jpg");
+		beach.evenRed();
+		this.copy(beach, 0, 0);
+		beach.encoding(message, beach);
+		beach.decode(beach);
+		this.copy(beach, 0, 0);
+	}
+	public void encoding(Picture message, Picture beach)
+	{
+		Pixel[][] pixels = this.getPixels2D();
+		int width = pixels[0].length;
+		for (int row = 0; row < (pixels.length-1); row++)
+		{
+			for (int col = 0; col < (pixels[0].length-1); col++)
+			{				
+				if((message.getPixel(col, row).getRed()) < 10)
+				{
+					beach.getPixel(col, row).setRed(beach.getPixel(col, row).getRed()+1);
+				}
+				
+			}
+
+		}
+	}
+	public void decode(Picture beach)
+	{
+		Pixel[][] pixels = this.getPixels2D();
+		int width = pixels[0].length;
+		for (int row = 1; row < (pixels.length); row++)
+		{
+			for (int col = 1; col < (width); col++)
+			{				
+				if(((beach.getPixel(col, row).getRed()) % 2) == 0)
+				{					
+					beach.getPixel(col, row).setRed(255);
+					beach.getPixel(col, row).setBlue(255);
+					beach.getPixel(col, row).setGreen(255);
+				}
+//				else
+//				{
+//					beach.getPixel(col, row).setRed(0);
+//					beach.getPixel(col, row).setBlue(0);
+//					beach.getPixel(col, row).setGreen(0);
+//				}
+				
+			}
+
+		}
+	}
+	public void evenRed()
+	{
+		Pixel[][] pixels = this.getPixels2D();
+		int width = pixels[0].length;
+		for (int row = 0; row < pixels.length; row++)
+		{
+			for (int col = 0; col < width; col++)
+			{
+				
+				if(pixels[row][col].getRed() % 2 == 1)
+				{
+				pixels[row][col].setRed(pixels[row][col].getRed()-1);
+				}
+				
+			}
+
+		}
 	}
 
 	/**

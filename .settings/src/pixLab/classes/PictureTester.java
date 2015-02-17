@@ -40,6 +40,13 @@ public class PictureTester
     beach.keepOnlyGreen1();
     beach.explore();
   }
+  public static void testCheckerRandom()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.checkerRandom();
+	  beach.explore();
+  }
   public static void testNegate()
   {
     Picture beach = new Picture("beach.jpg");
@@ -322,6 +329,23 @@ public class PictureTester
     canvas.weakenedWhite();
     canvas.explore();
   }
+  public static void testEvenRed()
+  {
+    Picture canvas = new Picture("beach.jpg");
+    canvas.explore();
+    canvas.evenRed();
+    canvas.explore();
+  }
+  public static void testEncode()
+  {
+    Picture canvas = new Picture("beach.jpg");
+    canvas.explore();
+    canvas.encode();
+    canvas.explore();
+    canvas.encodeAndDecode();
+    canvas.explore();
+  }
+  
   public static void testRGBGrey()
   {
     Picture canvas = new Picture("beach.jpg");
@@ -372,6 +396,9 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
+//	  testCheckerRandom();
+	  testEncode();
+//	  testEvenRed();
 //	  testRedGreenBlueAverage();
 //	  testMostlyWhite();
 //	  testRGBGrey();
