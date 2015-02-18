@@ -844,10 +844,10 @@ public class Picture extends SimplePicture
 	public void encode()
 	{
 		Picture beach = new Picture("beach.jpg");
-		Picture message = new Picture("lol2.jpg");
+		Picture message = new Picture("message.jpg");
 		beach.evenRed();
-		this.copy(beach, 0, 0);
 		beach.encoding(message, beach);
+		this.copy(beach, 0, 0);
 //		beach.decode(beach);
 //		this.copy(beach, 0, 0);
 //		
@@ -867,6 +867,7 @@ public class Picture extends SimplePicture
 		beach.evenRed();
 		this.copy(beach, 0, 0);
 		beach.encoding(message, beach);
+		this.copy(beach, 0, 0);
 		beach.decode(beach);
 		this.copy(beach, 0, 0);
 	}
@@ -958,6 +959,33 @@ public class Picture extends SimplePicture
 		}
 	}
 
+	public void picture2CheckerBoard(Picture firstPicture, Picture secondPicture, int smallestRowSize, int smallestColSize)
+	{
+		Picture beach = new Picture(firstPicture);
+		Picture message = new Picture(secondPicture);
+		this.copy(beach, 0, 0);
+		beach.checkering(beach, message, smallestRowSize, smallestColSize);
+		this.copy(beach, 0, 0);
+	}
+	public void checkering(Picture message, Picture beach, int smallestRowSize, int smallestColSize)
+	{
+		Pixel[][] pixels = this.getPixels2D();
+		int width = pixels[0].length;
+		for (int row = 0; row < (smallestRowSize-2); row++)
+		{
+			for (int col = 0; col < (smallestColSize-2); col++)
+			{				
+				if((row%2 == 0 && col%2 == 0) || (row%2 == 1 && col%2 == 1))
+				{
+					message.getPixel(col, row).setRed(beach.getPixel(col, row).getRed());
+					message.getPixel(col, row).setBlue(beach.getPixel(col, row).getBlue());
+					message.getPixel(col, row).setGreen(beach.getPixel(col, row).getGreen());
+				}
+				
+			}
+
+		}
+	}
 	/*
 	 * Main method for testing - each class in Java can have a main method
 	 */

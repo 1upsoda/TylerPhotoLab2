@@ -336,6 +336,45 @@ public class PictureTester
     canvas.evenRed();
     canvas.explore();
   }
+  public static void testDecodeAnything()
+  {
+    Picture canvas = new Picture("beach.jpg");
+    canvas.explore();
+    canvas.decode(canvas);
+    canvas.explore();
+  }
+  public static void testPicture2CheckerBoard()
+  {
+    Picture canvas = new Picture("640px-Fnaf3.jpg");
+    Picture island = new Picture("barbaraS.jpg");
+    boolean length = (canvas.getWidth() > island.getWidth());
+    boolean height = (canvas.getHeight() > island.getHeight());
+    canvas.explore();
+    if (length)
+    {
+    	if (height)
+    	{
+    		canvas.picture2CheckerBoard( canvas , island, island.getHeight(), island.getWidth());
+    	}
+    	else
+    	{
+    		canvas.picture2CheckerBoard( canvas , island, canvas.getHeight(), island.getWidth());
+    	}
+    }
+    else
+    {
+    	if (height)
+    	{
+    		canvas.picture2CheckerBoard( canvas , island, island.getHeight(), canvas.getWidth());
+    	}
+    	else
+    	{
+    		canvas.picture2CheckerBoard( canvas , island, canvas.getHeight(), canvas.getWidth());
+    	}    	
+    }
+    canvas.picture2CheckerBoard( canvas , island, 100, 100);
+    canvas.explore();
+  }
   public static void testEncode()
   {
     Picture canvas = new Picture("beach.jpg");
@@ -397,7 +436,9 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
 //	  testCheckerRandom();
-	  testEncode();
+//	  testEncode();
+	  testPicture2CheckerBoard();
+//	  testDecodeAnything();
 //	  testEvenRed();
 //	  testRedGreenBlueAverage();
 //	  testMostlyWhite();
